@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars:
-    URL_ART: "http://18.231.172.200:8081/repository/mrunalraw/com/jdevs/studentapp/2.2/studentapp-2.2.war"
+    URL_ART: "http://3.110.167.183:8081/#browse/browse/assets:Myanshikapp/in/javahome/dockeransible/6.0.0-SNAPSHOT/dockeransible-6.0.0-20221007.110018-1.war"
     URL_TOM: "https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.zip"
     URL_TOMZIP: "{{ URL_TOM.split('/') | last }}"
   tasks:
@@ -18,7 +18,7 @@
         remote_src: true
     - name: Download Artifact
       copy:
-        src: ./hosts
+        src: "{{URL_ART}}"
         dest: /opt/apache-tomcat-8.5.83/webapps/
     - name: Start Catalina
       shell: "sh ./apache-tomcat-8.5.83/bin/catalina.sh start"
