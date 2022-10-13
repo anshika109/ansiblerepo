@@ -18,7 +18,7 @@
         remote_src: true
     - name: Download Artifact
       copy:
-        src: /home/ec2-user/workspace/demo/*.war
+        remote_src: /home/ec2-user/workspace/demo/*.war
         dest: /opt/apache-tomcat-8.5.83/webapps/
     - name: Start Catalina
       shell: "sh ./apache-tomcat-8.5.83/bin/catalina.sh start"
