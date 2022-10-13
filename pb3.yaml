@@ -16,9 +16,9 @@
         src: /opt/{{ URL_TOMZIP }}
         dest: /opt/
         remote_src: true
-    - name: Download Artifact
+    - name: Download Artifact to Tomcat
       copy:
-        remote_src: /home/ec2-user/workspace/demo/*.war
+        src: /home/ec2-user/workspace/demo/*.war
         dest: /opt/apache-tomcat-8.5.83/webapps/
     - name: Start Catalina
       shell: "sh ./apache-tomcat-8.5.83/bin/catalina.sh start"
