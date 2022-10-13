@@ -16,9 +16,9 @@
         src: /opt/{{ URL_TOMZIP }}
         dest: /opt/
         remote_src: true
-    - name: Download Artifact to Tomcat
+    - name: Upload Artifact to Tomcat
       copy:
-        src: /workspace/demo/*.war
+        src: /var/lib/jenkins/workspace/demo/target/*.war
         dest: /opt/apache-tomcat-8.5.83/webapps/
         remote_src: true
     - name: Start Catalina
