@@ -18,7 +18,7 @@
         remote_src: true
     - name: Upload Artifact to Tomcat
       copy:
-        src: ./simpleapp-6.0.0.war
+        src: /home/ec2-user/workspace/demo/simpleapp-6.0.0.war
         dest: /opt/apache-tomcat-8.5.83/webapps/
         remote_src: true
     - name: Start Catalina
