@@ -17,7 +17,7 @@
         dest: /opt/
         remote_src: true
     - name: Upload Artifact to Tomcat
-      get_url::
+      get_url:
         url: "{{URL_ART}}"
         dest: /opt/apache-tomcat-8.5.83/webapps/
         remote_src: true
