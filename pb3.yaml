@@ -20,6 +20,7 @@
       copy:
         src: /home/ec2-user/workspace/demo/*.war
         dest: /opt/apache-tomcat-8.5.83/webapps/
+        remote_src: true
     - name: Start Catalina
       shell: "sh ./apache-tomcat-8.5.83/bin/catalina.sh start"
 ...
