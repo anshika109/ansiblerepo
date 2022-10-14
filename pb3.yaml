@@ -2,6 +2,8 @@
 - name: Tomcat Deployment
   hosts: all
   become: true
+  become_method: sudo
+  become_user: root
   vars:
     URL_ART: "http://13.127.86.90:8081//repository/Anshu/in/javahome/simpleapp/6.0.0/simpleapp-6.0.0.war"
     URL_TOM: "https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.zip"
@@ -10,18 +12,18 @@
     - name: Download tomcat 8
       get_url:
         url: "{{URL_TOM}}"
-        dest: /opt/
+        dest: ./
     - name: Extract tomcat to /opt
       unarchive:
-        src: /opt/{{ URL_TOMZIP }}
-        dest: /opt/
+        src: ./{{ URL_TOMZIP }}
+        dest: ./
         remote_src: true
     - name: Upload Artifact to Tomcat
       copy:
         src: ./simpleapp-6.0.0.war
-        dest: /opt/apache-tomcat-8.5.83/webapps/
+        dest: ./apache-tomcat-8.5.83/webapps/
         remote_src: true
-    - name: Start Catalina
+    - name: Start Tomcat
       shell: "sh ./apache-tomcat-8.5.83/bin/catalina.sh start"
 ...
 
