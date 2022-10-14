@@ -12,7 +12,7 @@
       get_url:
         url: "{{ URL_TOM }}"
         dest: ./
-    - name: Extract tomcat to /opt
+    - name: Extract tomcat to /
       unarchive:
         src: ./{{ URL_TOMZIP }}
         dest: ./
