@@ -20,7 +20,7 @@
         remote_src: true
     - name: Upload Artifact to Tomcat
       copy:
-        src: ./simpleapp-6.0.0.war.3
+        src: ./simpleapp-6.0.0.war.4
         dest: ./apache-tomcat-8.5.83/webapps/
         remote_src: true
     - name: Start Tomcat
