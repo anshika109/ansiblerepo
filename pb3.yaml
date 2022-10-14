@@ -3,7 +3,7 @@
   hosts: all
   become: true
   vars:
-    URL_ART: "http://13.127.123.255:8081/repository/Anshu/in/javahome/simpleapp/6.0.0/simpleapp-6.0.0.war"
+    URL_ART: "http://13.127.86.90:8081//repository/Anshu/in/javahome/simpleapp/6.0.0/simpleapp-6.0.0.war"
     URL_TOM: "https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.83/bin/apache-tomcat-8.5.83.zip"
     URL_TOMZIP: "{{ URL_TOM.split('/') | last }}"
   tasks:
