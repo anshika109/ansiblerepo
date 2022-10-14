@@ -11,11 +11,16 @@
   tasks:
     - name: Download tomcat 8
       get_url:
-        url: "{{URL_TOM}}"
+        url: "{{ URL_TOM }}"
         dest: ./
     - name: Extract tomcat to /opt
       unarchive:
         src: ./{{ URL_TOMZIP }}
+        dest: ./
+        remote_src: true
+    - name: Download war from Artifactory to Ansible
+      get_url:
+        url: "{{ URL_ART }}"
         dest: ./
         remote_src: true
     - name: Upload Artifact to Tomcat
