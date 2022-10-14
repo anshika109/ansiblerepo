@@ -16,7 +16,7 @@
       unarchive:
         src: ./{{ URL_TOMZIP }}
         dest: ./
-        remote_src: true
+        remote_src: true      
     - name: Pull war
       get_url: 
         url: "http://13.127.86.90:8081/repository/Anshu/in/javahome/simpleapp/6.0.0/simpleapp-6.0.0.war"
