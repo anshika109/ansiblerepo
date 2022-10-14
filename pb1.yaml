@@ -1,15 +1,12 @@
 ---
-- name: Tomcat Deployment
-  hosts: tom
+- name: Pull war
+  hosts: ansi
   become: true
-  vars:
-    URL_ART: " Artifact URL "
   tasks:
-    - name: Download Artifact
-      get_url:
-        url: "{{ URL_ART }}"
-        dest: ./apache-tomcat-8.5.78/webapps/
-
-    -  name: Start Catalina
-       shell: sh ./apache-tomcat-8.5.78/bin/catalina.sh start
+    - name: Pull war
+      get_url: 
+        url: "http://13.127.86.90:8081/repository/Anshu/in/javahome/simpleapp/6.0.0/simpleapp-6.0.0.war"
+        dest: ./
+        url_username: admin
+        url_password: admin
 ...       
