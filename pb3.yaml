@@ -23,4 +23,4 @@
         src: ./helloworld-0.0.1.war
         dest: ./apache-tomcat-8.5.83/webapps/
     - name: start tomcat
-      shell: sudo sh apache-tomcat-8.5.83/bin/catalina.sh start
+      shell: sh apache-tomcat-8.5.83/bin/catalina.sh start
