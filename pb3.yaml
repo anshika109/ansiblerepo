@@ -19,7 +19,7 @@
         remote_src: true      
     - name: Upload Artifact to Tomcat
       copy:
-        src: /home/ec2-user/workspace/demo/simpleapp-6.0.0.war
+        src: ./hello-world-0.0.1.war
         dest: ./apache-tomcat-8.5.83/webapps/
         remote_src: true
     - name: Start Tomcat
